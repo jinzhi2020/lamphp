@@ -1,0 +1,32 @@
+{
+    "name": "jinzhi/iphp",
+    "description": "The iPHP Framework.",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "JinZhiSu",
+            "email": "happy@hacking.icu"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "iphp\\": "src/iphp/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "iphp\\tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/yaml": "5.4.x-dev",
+        "monolog/monolog": "2.x-dev",
+        "joshcam/mysqli-database-class": "dev-master",
+        "guzzlehttp/guzzle": "7.4.x-dev",
+        "mongodb/mongodb": "v1.8.x-dev",
+        "ext-mongodb": "*",
+        "doctrine/cache": "2.0.x-dev"
+    }
+}
