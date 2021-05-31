@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Lamp;
 
@@ -60,7 +61,7 @@ class App
         // 设置时区
         self::setTimeZone();
         // 初始化目录结构
-        self::initDir();
+        self::initDir($root);
     }
 
     /**
@@ -82,9 +83,10 @@ class App
     /**
      * 初始化目录结构
      */
-    private static function initDir(): void
+    private static function initDir(string $root): void
     {
         foreach (self::INIT_DIR as $dir) {
+            $dir = $root . $dir;
             !is_dir($dir) && mkdir($dir);
         }
     }
