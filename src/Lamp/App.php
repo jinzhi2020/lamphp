@@ -52,10 +52,10 @@ class App
      * 应用初始化
      * @throws Exception
      */
-    public static function init(): void
+    public static function init(string $root): void
     {
         // 加载配置
-        Configs::load();
+        Configs::load($root);
         // 设置时区
         self::setTimeZone();
         // 初始化目录结构
