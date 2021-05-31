@@ -1,5 +1,5 @@
 {
-    "name": "iphp/framework",
+    "name": "lamphp/framework",
     "description": "The LAMPhp Framework.",
     "type": "library",
     "license": "Apache-2.0",
