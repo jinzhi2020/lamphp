@@ -2,7 +2,7 @@
 
 namespace Lamp\Tests;
 
-use LAMP\Bean;
+use Lamp\Bean;
 use PHPUnit\Framework\TestCase;
 
 /**

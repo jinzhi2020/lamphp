@@ -1,6 +1,6 @@
 <?php
 
-namespace LAMP\Console\Output\Driver;
+namespace Lamp\Console\Output\Driver;
 
 use Lamp\Console\Output;
 use Lamp\Console\Output\Formatter;

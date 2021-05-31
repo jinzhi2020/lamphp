@@ -1,12 +1,12 @@
 <?php
 
-namespace LAMP\Orm\Types;
+namespace Lamp\Orm\Types;
 
-use LAMP\Exception\RuntimeException;
+use Lamp\Exception\RuntimeException;
 
 /**
  * Class Integer
- * @package LAMP\Orm\Types
+ * @package Lamp\Orm\Types
  */
 class Integer extends Type
 {

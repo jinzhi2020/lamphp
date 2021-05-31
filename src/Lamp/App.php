@@ -39,12 +39,13 @@ class App
 
     /**
      * 获取 Console 实例
+     * @param string $root
      * @return Console
      * @throws Exception
      */
-    public static function getConsole(): Console
+    public static function getConsole(string $root): Console
     {
-        self::init();
+        self::init($root);
         return new Console();
     }
 

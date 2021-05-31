@@ -1,15 +1,15 @@
 <?php
 
-namespace LAMP;
+namespace Lamp;
 
 use ArrayAccess;
-use LAMP\Exception\RuntimeException;
+use Lamp\Exception\RuntimeException;
 use JetBrains\PhpStorm\Pure;
 use ReflectionClass;
 
 /**
  * Class Enum
- * @package LAMP
+ * @package Lamp
  */
 class Enum implements ArrayAccess
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace LAMP\Console\Input;
+namespace Lamp\Console\Input;
 
-use LAMP\Exception\RuntimeException;
+use Lamp\Exception\RuntimeException;
 
 /**
  * Class Argument
- * @package LAMP\Console\Input
+ * @package Lamp\Console\Input
  */
 class Argument
 {

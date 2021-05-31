@@ -2,7 +2,7 @@
 
 namespace Lamp\Orm\Types;
 
-use LAMP\Exception\RuntimeException;
+use Lamp\Exception\RuntimeException;
 
 /**
  * Class Tinyint

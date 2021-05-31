@@ -2,12 +2,12 @@
 
 namespace Lamp\Console\Output;
 
-use LAMP\Console\Output\Formatter\Stack as StyleStack;
-use LAMP\Console\Output\Formatter\Style;
+use Lamp\Console\Output\Formatter\Stack as StyleStack;
+use Lamp\Console\Output\Formatter\Style;
 
 /**
  * Class Formatter
- * @package LAMP\Console\Output
+ * @package Lamp\Console\Output
  */
 class Formatter
 {

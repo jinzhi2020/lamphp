@@ -5,8 +5,8 @@ namespace Lamp;
 use Lamp\Console\Command;
 use Lamp\Console\Commands\Helper;
 use Lamp\Console\Input;
-use LAMP\Console\Output;
-use LAMP\Exception\RuntimeException;
+use Lamp\Console\Output;
+use Lamp\Exception\RuntimeException;
 
 /**
  * Class Console

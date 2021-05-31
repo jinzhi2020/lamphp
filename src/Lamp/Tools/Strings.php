@@ -1,12 +1,12 @@
 <?php
 
-namespace LAMP\Tools;
+namespace Lamp\Tools;
 
 use function Symfony\Component\String\u;
 
 /**
  * Class Strings
- * @package LAMP\Tools
+ * @package Lamp\Tools
  */
 class Strings
 {
