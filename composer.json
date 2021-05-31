@@ -1,6 +1,6 @@
 {
-    "name": "iphp/iphp",
-    "description": "The iPHP Framework.",
+    "name": "iphp/framework",
+    "description": "The LAMPhp Framework.",
     "type": "library",
     "license": "Apache-2.0",
     "authors": [
@@ -11,12 +11,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "iphp\\": "src/iphp/"
+            "Lamp\\": "src/Lamp/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "iphp\\tests\\": "tests/"
+            "Lamp\\tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",
