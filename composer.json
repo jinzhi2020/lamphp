@@ -27,7 +27,7 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "php": "8.0",
+    "php": "^8.0",
     "symfony/yaml": "5.4.x-dev",
     "monolog/monolog": "2.x-dev",
     "joshcam/mysqli-database-class": "dev-master",
