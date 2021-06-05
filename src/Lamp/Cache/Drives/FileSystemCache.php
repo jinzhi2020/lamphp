@@ -9,10 +9,13 @@ use Doctrine\Common\Cache\Cache;
  * Class FileSystemCache
  * @package Lamp\Cache\Drives
  */
-class FileSystemCache implements Cache {
+class FileSystemCache implements Cache
+{
 
-    public function __construct (protected string $dir) {
-        $this->dir = $dir;
+    public function __construct(
+        protected string $dir
+    )
+    {
     }
 
     /**
@@ -20,8 +23,9 @@ class FileSystemCache implements Cache {
      * @param string $id
      * @return void
      */
-    public function fetch ($id) {
-        $path = $this->dir.md5($id).'.cache';
+    public function fetch($id)
+    {
+        $path = $this->dir . md5($id) . '.cache';
         if (!is_file($path)) {
             return null;
         }
@@ -42,7 +46,8 @@ class FileSystemCache implements Cache {
      * @param array $meta
      * @return bool
      */
-    private function timeout (string $path, array $meta): bool {
+    private function timeout(string $path, array $meta): bool
+    {
         // 如果生存时间为 0, 则表示永不过期
         if ($meta['lifeTime'] === 0) {
             return true;
@@ -60,8 +65,9 @@ class FileSystemCache implements Cache {
      * @param string $id
      * @return bool
      */
-    public function contains ($id): bool {
-        $path = $this->dir . md5($id).'.cache';
+    public function contains($id): bool
+    {
+        $path = $this->dir . md5($id) . '.cache';
         if (!is_file($path)) {
             return false;
         }
@@ -78,15 +84,16 @@ class FileSystemCache implements Cache {
      * @param int $lifeTime
      * @return void
      */
-    public function save ($id, $data, $lifeTime = 0) {
-        $file = $this->dir . md5($id).'.cache';
+    public function save($id, $data, $lifeTime = 0)
+    {
+        $file = $this->dir . md5($id) . '.cache';
         if (!file_exists($file)) {
             touch($file);
         }
         file_put_contents($file, json_encode([
             'data' => $data,
             'meta' => [
-                'lifeTime'  => $lifeTime,
+                'lifeTime' => $lifeTime,
                 'timestamp' => time(),
             ],
         ]));
@@ -97,8 +104,9 @@ class FileSystemCache implements Cache {
      * @param string $id
      * @return void
      */
-    public function delete ($id): void {
-        $file = $this->dir . md5($id).'.cache';
+    public function delete($id): void
+    {
+        $file = $this->dir . md5($id) . '.cache';
         unlink($file);
     }
 
@@ -106,7 +114,8 @@ class FileSystemCache implements Cache {
      * 获取缓存的状态
      * @return void
      */
-    public function getStats () {
+    public function getStats()
+    {
         // TODO: Implement getStats() method.
     }
 }

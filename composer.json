@@ -34,6 +34,8 @@
     "guzzlehttp/guzzle": "7.4.x-dev",
     "mongodb/mongodb": "v1.8.x-dev",
     "ext-mongodb": "*",
-    "doctrine/cache": "2.0.x-dev"
+    "doctrine/cache": "2.0.x-dev",
+    "ext-mbstring": "*",
+    "symfony/string": "5.4.x-dev"
   }
 }

@@ -80,7 +80,7 @@ class Rules
             return true;
         }
 
-        return filter_var($params[$key], FILTER_VALIDATE_INT);
+        return (bool)filter_var($params[$key], FILTER_VALIDATE_INT);
     }
 
     /**
@@ -158,7 +158,7 @@ class Rules
             return true;
         }
 
-        return preg_match('/^1[3456789]\d{9}$/', $params[$key]);
+        return (bool)preg_match('/^1[3456789]\d{9}$/', $params[$key]);
     }
 
     /**
@@ -173,7 +173,7 @@ class Rules
             return true;
         }
 
-        return filter_var($params[$key], FILTER_VALIDATE_IP);
+        return (bool)filter_var($params[$key], FILTER_VALIDATE_IP);
     }
 
     /**
@@ -188,7 +188,7 @@ class Rules
             return true;
         }
 
-        return filter_var($params[$key], FILTER_VALIDATE_URL);
+        return (bool)filter_var($params[$key], FILTER_VALIDATE_URL);
     }
 
     /**
@@ -204,7 +204,7 @@ class Rules
             return true;
         }
 
-        return call_user_func($callable, $params, $key);
+        return (bool)call_user_func($callable, $params, $key);
     }
 
     /**

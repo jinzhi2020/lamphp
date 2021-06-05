@@ -63,7 +63,7 @@ class Cache
             if (!in_array(ICache::class, class_implements($className))) {
                 throw new RuntimeException('Cache not implement cache interface!');
             }
-            self::$adapter = new $className();
+            self::$adapter = new $className($configs['dir'] ?? '/');
         }
 
         return self::$adapter;
