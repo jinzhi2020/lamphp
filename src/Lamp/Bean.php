@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Lamp;
 
+use Lamp\Attributes\Bean\ObjectArray;
 use ReflectionClass;
+use ReflectionException;
 use ReflectionProperty;
 
 /**
@@ -15,6 +17,7 @@ class Bean
 
     /**
      * Bean constructor.
+     * @throws ReflectionException
      */
     public function __construct(?array $data)
     {
@@ -26,13 +29,37 @@ class Bean
     /**
      * 数组转为 Bean
      * @param array $data
+     * @throws ReflectionException
      */
     private function arrayToBean(array $data)
     {
         $data = $this->filterNotExistsProps($data);
         foreach ($data as $key => $value) {
-            $this->$key = $value;
+            // 检查是否存在 ObjectArray 注解
+            if (!$this->getAndSetAttribute(ObjectArray::class, $key, $value)) {
+                $this->$key = $value;
+            }
         }
+    }
+
+    /**
+     * 获取注解
+     * @param string $name
+     * @param string $property
+     * @param mixed $value
+     * @return bool
+     * @throws ReflectionException
+     */
+    private function getAndSetAttribute(string $name, string $property, mixed $value): bool
+    {
+        $propertyRef = new ReflectionProperty(static::class, $property);
+        $attribute = $propertyRef->getAttributes($name)[0] ?? null;
+        if (!is_null($attribute)) {
+            $attribute->newInstance()->load($this, $property, $value);
+            return true;
+        }
+
+        return false;
     }
 
     /**
