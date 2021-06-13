@@ -116,6 +116,22 @@ class Rules
     }
 
     /**
+     * 校验最小值
+     * @param array $params
+     * @param string $key
+     * @param int $min
+     * @return bool
+     */
+    public static function min(array $params, string $key, int $min): bool
+    {
+        if (!isset($params[$key])) {
+            return true;
+        }
+
+        return $params[$key] <= $min;
+    }
+
+    /**
      * 转换为整型
      * @param array $params
      * @param string $key
