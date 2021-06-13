@@ -19,6 +19,6 @@ class Strings
      */
     public static function snake(string $str): string
     {
-        return u($str)->snake();
+        return u($str)->snake()->toString();
     }
 }
