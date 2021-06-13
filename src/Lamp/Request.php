@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace LAMP;
+namespace Lamp;
 
 class Request
 {
