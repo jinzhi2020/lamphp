@@ -15,7 +15,7 @@ use MysqliDb;
  * @package App\Common\Basic
  *
  * @method bool insert(string $tableName, array $insertData)
- * @method MysqliDb where(string $filed, string $value)
+ * @method MysqliDb where(string $filed, mixed $value)
  * @method int getInsertId()
  * @method mixed getValue($tableName, $column, $limit = 1)
  * @method string getLastQuery()
