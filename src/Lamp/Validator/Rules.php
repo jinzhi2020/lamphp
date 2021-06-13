@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Lamp\Validator;
 
+use JetBrains\PhpStorm\Pure;
 use Lamp\Exception\RuntimeException;
 
 /**
@@ -32,6 +33,18 @@ class Rules
         }
 
         return true;
+    }
+
+    /**
+     * 校验依赖的字段是否存在
+     * @param array $params
+     * @param string $key
+     * @param string $field
+     * @return bool
+     */
+    #[Pure] public static function requiredByField(array $params, string $key, string $field): bool
+    {
+        return self::required($params, $field, true);
     }
 
     /**
@@ -128,7 +141,7 @@ class Rules
             return true;
         }
 
-        return $params[$key] <= $min;
+        return $params[$key] >= $min;
     }
 
     /**
